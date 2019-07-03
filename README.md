@@ -1,2 +1,7 @@
 # Unix-Hands-on-Practice
-to provide unix hands on examples for everybody
+Hi All,
+My name is Sonjil Jain.
+This repository is for people who wants to practice unix commands
+Here i will try to add most askable questions on unix commands
+Also there are various hands on exercises for you to try hand on on unix.
+
