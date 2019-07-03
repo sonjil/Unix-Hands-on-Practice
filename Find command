@@ -59,6 +59,11 @@ find . -type d -name CVS -exec rm -r {} \;                        # remove all s
 
 find files by modification time
 -------------------------------
+-mtime +60 means you are looking for a file modified 60 days ago.
+-mtime -60 means less than 60 days.
+-mtime 60 If you skip + or – it means exactly 60 days.
+
+
 find . -mtime 1               # 24 hours
 find . -mtime -7              # last 7 days
 find . -mtime -7 -type f      # just files
