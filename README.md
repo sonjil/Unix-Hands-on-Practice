@@ -5,3 +5,4 @@ This repository is for people who wants to practice unix commands
 Here i will try to add most askable questions on unix commands
 Also there are various hands on exercises for you to try hand on on unix.
 
+Link for reading : https://alvinalexander.com/unix
