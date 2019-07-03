@@ -1,0 +1,14 @@
+In your home directory create a directory named DIR
+Copy all files whose filenames satisfy the following conditions to ~/DIR. The files are in /usr/include directory, their names start with m, end with .h and contain a number.
+Create a subdirectory called SUBDIR in your DIR directory.
+The first five lines of each file you have copied from /usr/include copy to file ~/DIR/SUBDIR/firstfive.
+The last lines of files in ~/DIR copy to file ~/DIR/SUBDIR/last.
+Concatenate the two files in ~/DIR/SUBDIR into one file ~/DIR/SUBDIR/firstandlast
+Delete the files in ~/DIR/SUBDIR except firstandlast.
+Store the number of files and directories in ~/DIR into a file ~/DIR/SUBDIR/count
+Output the long information on ~/DIR/SUBDIR directory. (Not its content, but information on it).
+Delete the contents of ~/DIR/SUBDIR/firstandlast file without removing the file itself.
+Add a line containing just a star sign (i.e. *) to file ~/DIR/SUBDIR/firstandlast.
+Delete ~/DIR together with all the files it contains.
+(Show solutions to preceding exercises)
+Output lines number 11-20 from file /etc/passwd. 
