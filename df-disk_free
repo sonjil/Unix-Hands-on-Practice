@@ -1,0 +1,81 @@
+df Command
+------------------------
+------------------------
+
+The Linux df command stands for "disk free". It is meant to show Linux disk space information, including disk space that is used, disk space remaining, and how filesystems are mounted on your Linux (or Unix) system. The Linux df command not only shows the free disk space on your local computer, it also shows the free disk space on all networked filesystems that are mounted by your Linux system.
+
+
+$ df
+Filesystem  1K-blocks   Used     Available  Use%  Mounted on
+/dev/vzfs   10485760    5713424  4772336    55%   /
+
+$ df -h
+
+Filesystem   Size  Used  Avail  Use%  Mounted on
+/dev/vzfs    10G   5.5G  4.6G   55%   /
+
+
+
+
+du Command
+------------------------
+------------------------
+The Unix and Linux du command shows information about "disk usage". Whereas the df command ("disk free") shows information about Linux filesystems, the du command shows disk usage information about only the files and directories you specify.
+
+$ du -hs *
+
+ 60K	Burn-an-ISO
+1.2M	BurnFolders
+4.3M	CreateAPodcast-1
+2.1M	CreateAPodcast-2
+ 16M	CreateAPodcast-3
+2.5M	Java-Mac-Jar-Bundler
+1.3M	Java-on-Mac
+
+With that command, the -h option of the du command means "human readable" (as in "show me MB and GB"), and the -s means "only show summary information". It's important to note that this command runs in real time, so for very large directories, it can be slow to return your results.
+
+
+If you're trying to find large files, sorting the output of the du command can be one approach. I find that leaving off the -h option and dealing with "block" output works better for sorting:
+
+$ du * | sort -n
+That du/sort command results in this output:
+
+56	CreateAPodcast-1/OldCSSFiles
+120	Burn-an-ISO
+376	BurnFolders/images
+400	Java-Mac-Jar-Bundler/images
+592	BurnFolders/images-orig
+616	Java-on-Mac/images
+656	Java-Mac-Jar-Bundler/java-on-mac
+752	BurnFolders/BurnFolders
+888	CreateAPodcast-3/images-orig/external-track
+896	Java-on-Mac/java-on-mac
+928	CreateAPodcast-3/images-orig/joining
+936	CreateAPodcast-3/images-orig/copying
+1112	CreateAPodcast-3/images-orig/new-track
+1136	CreateAPodcast-1/CreateAPodcast
+1256	CreateAPodcast-1/L2HBackups
+1336	CreateAPodcast-3/images/external-track
+1352	Java-Mac-Jar-Bundler/images copy
+1376	CreateAPodcast-3/images/joining
+1440	CreateAPodcast-3/images/copying
+1480	CreateAPodcast-2/images
+1536	CreateAPodcast-3/images-orig/splitting
+1616	Java-Mac-Jar-Bundler/images-old
+1656	CreateAPodcast-3/images/new-track
+1736	CreateAPodcast-2/CreateAPodcast
+2152	CreateAPodcast-1/images/Original
+2304	CreateAPodcast-3/images/splitting
+2448	BurnFolders
+2528	CreateAPodcast-3/images-orig/bg-track
+2704	Java-on-Mac
+3776	CreateAPodcast-3/images/bg-track
+4208	CreateAPodcast-2
+4984	CreateAPodcast-1/images
+5056	Java-Mac-Jar-Bundler
+7808	CreateAPodcast-3/CreateAPodcast
+7944	CreateAPodcast-3/images-orig
+8872	CreateAPodcast-1
+12248	CreateAPodcast-3/images
+32224	CreateAPodcast-3
+I may not be very good at working with block size, but I can tell that the CreateAPodcast-3 folder is far and away the largest subdirectory in my current directory.
